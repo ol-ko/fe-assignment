@@ -1,29 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <!--<div id="nav">-->
+        <!--<router-link to="/">Home</router-link>-->
+        <!--</div>-->
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    @import 'assets/variables.scss';
+
+    body {
+        font-family: Helvetica;
+        margin: 0;
+        padding: $layout-space-base;
     }
-  }
-}
+
+    $color-todo-light: #FDEDAC;
+    $color-todo-dark: #FEDE69;
+    .todo {
+        float: left;
+        padding: $layout-space-base;
+        margin: $layout-space-base / 2;
+        background: linear-gradient(to right bottom, $color-todo-dark 0%, $color-todo-light 100%);
+    }
 </style>
