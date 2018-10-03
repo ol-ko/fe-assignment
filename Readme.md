@@ -4,7 +4,7 @@ A simple boilerplate with Vue.js, Vue Router and Vuex for using at the interview
 Contains 3 small assignments.
 
 To begin, clone the repo and run `yarn install`.
-When node modules are installed, start the app by running `yarn start`.
+When node modules are installed, start the app by running `yarn serve`.
 
 First assignment will be visible on the home page.
 
