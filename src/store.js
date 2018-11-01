@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import properties from '../properties.json';
+import listings from '../listings.json';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    properties,
+    listings,
   },
   mutations: {
 

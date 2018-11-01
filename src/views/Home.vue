@@ -1,17 +1,14 @@
 <template>
   <div class="home">
-    <div class="todo">
-      <h2>TODO 1: Navigation to property details</h2>
-      <p>User should be able to navigate to the details page by clicking on the property.</p>
-    </div>
+    <to-do-1></to-do-1>
 
-    <ul class="property-list">
-      <li v-for="property in properties" class="property">
+    <ul class="listing-list">
+      <li v-for="listing in listings" :key="listing.id" class="listing">
         <div class="img">
-          <img v-if="property.images" :src="property.images[0]" alt="property.title">
+          <img v-if="listing.images" :src="listing.images[0]" alt="listing.title">
         </div>
         <p>
-          {{ property.title }}
+          {{ listing.title }}
         </p>
       </li>
     </ul>
@@ -20,36 +17,40 @@
 
 <script>
 import { mapState } from 'vuex';
+import ToDo1 from '../components/todos/ToDo1.vue';
 
 export default {
-  computed: mapState(['properties']),
+  components: {
+    ToDo1,
+  },
+  computed: mapState(['listings']),
 };
 </script>
 
 <style lang="scss">
   @import '../assets/variables.scss';
 
-  $property-img-width: 160px;
-  $property-img-height: 100px;
-  $property-image-placholder-background: #eaeaea;
+  $listing-img-width: 160px;
+  $listing-img-height: 100px;
+  $listing-image-placeholder-background: #eaeaea;
 
-  .property-list{
+  .listing-list{
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
 
-  .property {
+  .listing {
     padding: $layout-space-base;
     clear: both;
 
     .img {
-      width: $property-img-width;
-      height: $property-img-height;
+      width: $listing-img-width;
+      height: $listing-img-height;
       position: relative;
       overflow: hidden;
       float: left;
-      background: $property-image-placholder-background;
+      background: $listing-image-placeholder-background;
 
       img {
         position: absolute;
@@ -60,7 +61,7 @@ export default {
     }
 
     p {
-      margin-left: $property-img-width + ($layout-space-base / 2);
+      margin-left: $listing-img-width + ($layout-space-base / 2);
     }
   }
 </style>
