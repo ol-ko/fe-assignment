@@ -5,7 +5,7 @@
             Fetch the ids of similar listings from this REST API:
             <br>
             <a href="https://properties-34748.firebaseio.com/similar/1.json">
-                https://listings-34748.firebaseio.com/similar/1.json
+                https://properties-34748.firebaseio.com/similar/1.json
             </a>
             <br>
             where "1" is an id of a listing you are fetching similar listings for.
